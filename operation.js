@@ -34,11 +34,3 @@ exports.update=(db,doc,update,mycoll,callback)=>{
         callback(result);
     });
 };
-
-exports.updateDoc=(db,doc,update,collection,callback)=>{
-    const coll =db.collection(collection);
-    coll.updateOne(doc,{$set:update},null,(err,result)=>{
-        assert.equal(err,null);
-        console.log('updated the document with ',update);
-    });
-};
